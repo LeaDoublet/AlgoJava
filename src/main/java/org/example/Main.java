@@ -9,23 +9,29 @@ public class Main {
         //getMajOrMin();
         //getCategory();
         //numberBeetween(1,3);
-        factoriel();
-        getNumberPair();
+        //factoriel();
+        //getNumberPair();
         ex8();
     }
 
     private static void ex8() {
         // exercice 8 :
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Entrez un nombre : ");
-        int nombre = scanner.nextInt();
-        int[] t= new int[10];
-        int i=1;
-        while(i<10;i<t.length;i++;){
 
+        int[] t= new int[10];
+        int i=0;
+        int max = t.length-1;
+        while(i<max){
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Entrez un nombre : ");
+            int nombre = scanner.nextInt();
+            t[i]=nombre;
+            i++;
         }
     }
 
+    private static void afficherTable(int[] t){
+
+    }
     private static void getNumberPair() {
         //Exercice 7 :
         Scanner scanner = new Scanner(System.in);
@@ -36,6 +42,7 @@ public class Main {
             System.out.println(i);
             i=i+2;
         }
+
     }
 
     private static int factoriel() {

@@ -19,18 +19,59 @@ public class Main {
 
         int[] t= new int[10];
         int i=0;
-        int max = t.length-1;
+        int max = t.length;
         while(i<max){
             Scanner scanner = new Scanner(System.in);
             System.out.print("Entrez un nombre : ");
             int nombre = scanner.nextInt();
             t[i]=nombre;
+            afficherTable(t);
             i++;
         }
+        double moyenne = calculerMoyenne(t);
+        System.out.println("La moyenne du tableau est : " + moyenne);
+
+        trierTableau(t);
+
+    }
+
+    private static void trierTableau(int[] t) {
+        //exercice 10 : 
+        int n = t.length;
+        boolean estTrié;
+        do {
+            estTrié = true;
+            for (int i = 0; i < n - 1; i++) {
+                if (t[i] > t[i + 1]) {
+                    // Échanger les éléments si ils ne sont pas dans l'ordre
+                    int temp = t[i];
+                    t[i] = t[i + 1];
+                    t[i + 1] = temp;
+                    estTrié = false;
+                }
+            }
+        } while (!estTrié);
+        afficherTable(t);
+    }
+
+    private static double calculerMoyenne(int[] t) {
+        //exercice 9 :
+        int somme = 0;
+        for (int i = 0; i < t.length; i++) {
+            somme += t[i];
+        }
+        return (double) somme / t.length;
     }
 
     private static void afficherTable(int[] t){
-
+        System.out.print("[ ");
+        for (int i = 0; i < t.length; i++) {
+            System.out.print(t[i]);
+            if (i < t.length) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println(" ]");
     }
     private static void getNumberPair() {
         //Exercice 7 :
